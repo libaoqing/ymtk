@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+	<!-- 分页信息 -->
+	<pages>
+		<!-- 默认每页显示条数 -->
+		<pagesize>10</pagesize>
+		<!-- 大页面每页显示条数 -->
+		<bigsize>30</bigsize>
+		<!-- 小模块显示条数 -->
+		<smallsize>5</smallsize>
+	</pages>
+	
+	<!-- 常用变量 -->
+	<util>
+		<!-- 导出excel条数 -->
+		<exportsize>65535</exportsize>
+		<!-- 是否导出excel 0：否 1：是 -->
+		<isexport>1</isexport>
+		<!-- 查询时间范围的年份数 -->
+		<yearcount>5</yearcount>
+		<!-- 查询时间范围的月份数 -->
+		<monthcount>1</monthcount>
+		<!-- 查询时间范围的天数 -->
+		<daycount>30</daycount>
+		<!-- 表示启用，开启，是，已完成，已审核等 -->
+		<enable>1</enable>
+		<!-- 表示禁用，关闭，否，未完成，审核中等 -->
+		<disable>0</disable>
+		<!-- 关键字提示信息 -->
+		<keyword_tip>输入污染源名称、法人、行政区（到区县一级）、法人联系电话、组织机构代码 多个关键字用空格隔开</keyword_tip>
+		<!-- 查询列表默认排序字段值 默认按名称排序 值为1 SORTNUM/SPELL-0 ENTERNAME-1 tradename-9 ENTERTYPE-10 -->
+		<sortfield>0</sortfield>
+		<!-- 是否显示Gis定位 0不显示 1显示 -->
+		<is_showgis>0</is_showgis>
+		<!-- 是否显示out输出 0不显示 1显示 -->
+		<is_showout>1</is_showout>
+		<!-- 行政区下拉列表默认统计全部时的显示名称 -->
+		<select_region_name>全市</select_region_name>
+		<!-- 行政区下拉列表默认统计全部时的显示名称对应代码 -->
+		<select_region_code>0</select_region_code>
+		<!-- 行政区显示范围 名称 -->
+		<region_showlevel_name>佛山市</region_showlevel_name>
+		<!-- 行政区显示范围 编码 -->
+		<region_showlevel_code>440600000000</region_showlevel_code>
+		<!-- 行政区显示最低级别 1:省 2：市、市辖区、 3：区县 -->
+		<region_showlevel_count>3</region_showlevel_count>
+		<!-- 行政区匹配位数(数据库中数据使用的行政区代码位数) 默认6位 -->
+		<region_match_count>6</region_match_count>
+	</util>
+	
+	<!-- 服务配置 -->
+	<serverconfig>
+		<!-- 项目服务协议 -->
+		<server_schema>http</server_schema>
+		<!-- 项目服务器IP -->
+		<server_ip>192.168.0.140</server_ip>
+		<!-- 项目服务端口号 -->
+		<server_port>9080</server_port>
+		<!-- 项目部署名称（上下文名称） -->
+		<context>EnvQualityAnalysis</context>
+		<!-- 应用服务类型（字符大写） 取值：TOMCAT WEBLOGIC WEBSPHERE -->
+		<applicationserver_type>TOMCAT</applicationserver_type>
+	</serverconfig>
+	
+	<!-- sql方言 取值：oracleDialet db2Dialet mysqlDialet mssqlDialet -->
+	<dialets>
+		<dialet>oracleDialet</dialet>
+	</dialets>
+	<!-- 环境质量项目兼容项目（数据中心产品：1，佛山项目：2，常州：3） -->
+	<project>
+		<projecttype>2</projecttype>
+	</project>
+	<!-- 判断是否涨退潮（断面状态（0：正常，1:涨退潮）） -->
+	<datatype>
+		<type>0</type>
+	</datatype>
+	<!-- 判断是否显示数据类型(0：不显示，1：显示) -->
+	<showdatatype>
+		<showtype>0</showtype>
+	</showdatatype>
+	<!-- 断面档案查询弹出页面gis查询方式（0：通过缓存区的形式进行查询，1：通过断面所在河流进行查询） -->
+	<searchway>
+		<pattern></pattern>
+	</searchway>
+	<!-- 常规监测数据是否原始展现 0: 原始展现 1：保存四位-->
+	<showstyle>
+		<pettern>0</pettern>
+	</showstyle>
+	<!-- 字符编码 -->
+	<encodings>
+		<encoding>GBK</encoding>
+		<encoding>UTF8</encoding>
+		<encoding>ISO-8859-1</encoding>
+		<encoding>latin1</encoding>
+	</encodings>
+	<!-- 地表水水质现状分析-达标率仪表盘区域划分（数值从小到大，范围在1-100之内，只可改变数值，不可增减节点） -->
+	<fusion_charts_gauge_config>
+		<threshold_value_one>40</threshold_value_one>
+		<threshold_value_two>75</threshold_value_two>
+	</fusion_charts_gauge_config>
+	
+	<!-- 筛选断面属性配置类型 -->
+	<managerconfigs>
+		<managerconfig>1</managerconfig>
+	</managerconfigs>
+	<!-- 水质量分析断面档案连接污染源档案配置访问地址 -->
+	<ipconfigs>
+			<ipconfig>http://192.168.0.140:9080/summary.jsp</ipconfig>
+	</ipconfigs>
+	<!-- 档案查询中webserivce 通过经纬度来定位gis中位置的配置地址-->
+	<gisipconfig>
+		<ip>http://192.168.3.124:8080/PollutionSourceArchives</ip>
+	</gisipconfig>
+	<!-- 获取是全省，还是全市 的不同级别 -->
+	<regionlevel>
+		<name>全省</name>
+	</regionlevel>	
+	<!-- 配置周边建设项目的取值范围 -->
+	<ranges>
+		<range>30000</range>
+	</ranges>
+	<!-- 配置年度 -->
+	<date>
+		<startyear>2000</startyear><!-- 起始年度 -->
+		 <length>20</length><!-- 年限 -->
+	</date>
+	<!-- 北京市环保局监测点代码和名称 -->
+	<station>
+		<code>airmonitypeconfig</code>
+		<name>站点类别</name>
+	</station>
+	<!-- 接口地址配置172.26.15.134 -->
+	<interfaces>
+		<url>http://172.26.15.134:81/services/LegalPersonSearch</url>
+		<qname>http://services.sinosoft.com</qname>
+	</interfaces>
+	
+</xml-body>

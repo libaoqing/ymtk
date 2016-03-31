@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd" >
+
+	<context:component-scan base-package="com.ymtk.ai.zhxs.mapper" />
+
+	<!--这是我的需要注入的到ealm中的两个执行访问数据库的bean -->  
+	<bean id="permissionMgr" class="com.ymtk.ai.zhxs.manager.PermissionManager"></bean>  
+	<bean id="userMgr" class="com.ymtk.ai.zhxs.manager.UserManager"></bean>  
+       
+    <!-- shiro配置 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="successUrl" value="/" />
+		<property name="loginUrl" value="user/login" />
+		<property name="unauthorizedUrl" value="/errors/error403.html" />
+
+		
+		<property name="filterChainDefinitions">		
+			<value>				
+				/test/**=roles[admin]
+				
+			</value>
+		</property>
+	</bean>
+	
+	<bean id="shiro" class="com.ymtk.ai.zhxs.security.test.ShiroFilter">
+	 
+	</bean>
+	
+	<bean id="shiroRealm" class="com.ymtk.ai.zhxs.security.test.ShiroRealm">
+		<property name="usermgr" ref="userMgr"></property>  
+		<property name="permgr" ref="permissionMgr"></property>
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="shiroRealm" />
+		
+		<!--需要使用cache的话加上这句  -->
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+	</bean>
+
+	<!-- 用户授权信息Cache, 采用EhCache，需要的话就配置上此信息  -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager"> 
+		<property name="cacheManagerConfigFile" value="classpath:config/ehcache-shiro.xml"/>
+	</bean>
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+	
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+	
+	<!--以下两个是关于启用注解的配置 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+	      depends-on="lifecycleBeanPostProcessor"></bean>
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+	    <property name="securityManager" ref="securityManager"/>
+	</bean>
+
+	<!-- 将Controller抛出的异常转到特定View-->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthorizedException">error/403</prop>
+				<prop key="java.lang.Throwable">error/500</prop>
+			</props>
+		</property>
+	</bean>
+	 
+</beans>
