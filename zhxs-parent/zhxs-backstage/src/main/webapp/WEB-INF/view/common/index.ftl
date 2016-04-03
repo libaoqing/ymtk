@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><sitemesh:write property='title' /></title>
     <sitemesh:write property='head' />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />

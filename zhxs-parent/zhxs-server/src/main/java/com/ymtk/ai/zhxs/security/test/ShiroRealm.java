@@ -60,10 +60,11 @@ public class ShiroRealm extends AuthorizingRealm {
 			AuthenticationToken token) throws AuthenticationException {
 		
 		YmtkUser user= usermgr.getUserByName(token.getPrincipal().toString());
-		logger.debug("登陆用户："+user.getLoginName());
+		
 		if(user==null){
 			throw new UnknownAccountException();
 		}else{
+			logger.debug("登陆用户："+user.getLoginName());
 			return new SimpleAuthenticationInfo(user,user.getPassword(),getName());
 		}
 	}

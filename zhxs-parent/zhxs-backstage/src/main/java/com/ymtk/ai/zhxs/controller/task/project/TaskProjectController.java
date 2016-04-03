@@ -24,7 +24,14 @@ public class TaskProjectController extends BaseController{
 	@RequestMapping("/project")
 	public String project(HttpServletRequest request, Model model){
 		
+		model.addAttribute("msg", "李保清");
+		return "/task/task";
+	}
+	
+	@RequestMapping("/test")
+	public String test(HttpServletRequest request, Model model){
 		
-		return "/task/index";
+		model.addAttribute("msg", "李呃呃呃保清");
+		return "/task/test";
 	}
 }

@@ -1,6 +1,6 @@
 com\ymtk\ai\zhxs\controller\TestController.class
 com\ymtk\ai\zhxs\controller\backstage.class
 com\ymtk\ai\zhxs\controller\BaseController.class
+com\ymtk\ai\zhxs\controller\CommonController.class
 com\ymtk\ai\zhxs\controller\task\project\TaskProjectController.class
-com\ymtk\ai\zhxs\controller\common\CommonController.class
 com\ymtk\ai\zhxs\controller\UserController.class

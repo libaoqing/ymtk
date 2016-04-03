@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8" />
+	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>一米天空后台管理</title>
 </head>
 
@@ -16,8 +16,6 @@
 	<!-- BEGIN CONTAINER -->
 
 	<div class="page-container">
-
-		
 
 		<!-- BEGIN PAGE -->
 
@@ -149,7 +147,7 @@
 
 						<h3 class="page-title">
 
-							Dashboard <small>statistics and more</small>
+							Dashboard <small>statistics and more${msg}顺丰到付</small>
 
 						</h3>
 

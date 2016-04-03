@@ -23,9 +23,9 @@
     <!-- shiro配置 -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
-		<property name="successUrl" value="/" />
+		<property name="successUrl" value="/task/project" />
 		<property name="loginUrl" value="/user/login" />
-		<property name="unauthorizedUrl" value="/errors/error403.html" />
+		<property name="unauthorizedUrl" value="/error403.html" />
 
 		
 		<property name="filterChainDefinitions">		

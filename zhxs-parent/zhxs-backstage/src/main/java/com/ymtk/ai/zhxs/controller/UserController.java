@@ -23,7 +23,7 @@ public class UserController extends BaseController{
 	@RequestMapping(value = "/dologin")  
 	public String doLogin(HttpServletRequest request, Model model) {  
 	    String msg = "";  
-	    String userName = request.getParameter("userName");  
+	    String userName = request.getParameter("username");  
 	    String password = request.getParameter("password");  
 	    System.out.println(userName);  
 	    System.out.println(password);  
@@ -31,12 +31,12 @@ public class UserController extends BaseController{
 	    token.setRememberMe(true);  
 	    Subject subject = SecurityUtils.getSubject();  
 	    try {  
-	        subject.login(token);  
+	        subject.login(token);
 	        if (subject.isAuthenticated()) {
 	        	
-	            return "main";  
+	            return "redirect:/task/project";  
 	        } else {	        	
-	            return "index";  
+	            return "login/login";  
 	        }  
 	    } catch (IncorrectCredentialsException e) {  
 	        msg = "登录密码错误. Password for account " + token.getPrincipal() + " was incorrect.";  
@@ -67,17 +67,17 @@ public class UserController extends BaseController{
 	        model.addAttribute("message", msg);  
 	        System.out.println(msg);  
 	    }  
-	    return "/index";  
+	    return "login/login";  
 	}
 	
 	@RequestMapping(value = "/login")  
 	public String Login(HttpServletRequest request, Model model) { 
 		model.addAttribute("message", "你好，在访问信息没有权限或不存在！");
-		return "/login";
+		return "login/login";
 	}
 	
 	@RequestMapping(value="/logout")
-	public void logout() {
+	public String logout() {
 		Subject subject = SecurityUtils.getSubject();
 		if (subject.isAuthenticated()) {
 			subject.logout(); // session 会销毁，在SessionListener监听session销毁，清理权限缓存
@@ -85,5 +85,6 @@ public class UserController extends BaseController{
 				logger.debug("用户"  + "退出登录");
 			}
 		}
+		return "login/login";
 	}
 }
