@@ -35,8 +35,7 @@ public class UserController extends BaseController{
 	        if (subject.isAuthenticated()) {
 	        	
 	            return "main";  
-	        } else {
-	        	
+	        } else {	        	
 	            return "index";  
 	        }  
 	    } catch (IncorrectCredentialsException e) {  
@@ -74,6 +73,17 @@ public class UserController extends BaseController{
 	@RequestMapping(value = "/login")  
 	public String Login(HttpServletRequest request, Model model) { 
 		model.addAttribute("message", "你好，在访问信息没有权限或不存在！");
-		return "/index";
+		return "/login";
+	}
+	
+	@RequestMapping(value="/logout")
+	public void logout() {
+		Subject subject = SecurityUtils.getSubject();
+		if (subject.isAuthenticated()) {
+			subject.logout(); // session 会销毁，在SessionListener监听session销毁，清理权限缓存
+			if (logger.isDebugEnabled()) {
+				logger.debug("用户"  + "退出登录");
+			}
+		}
 	}
 }
