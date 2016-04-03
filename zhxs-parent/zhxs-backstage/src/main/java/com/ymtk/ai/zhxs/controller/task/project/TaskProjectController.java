@@ -21,11 +21,18 @@ import com.ymtk.ai.zhxs.controller.BaseController;
 @RequestMapping("/task")
 public class TaskProjectController extends BaseController{
 
+	@RequestMapping("/task")
+	public String task(HttpServletRequest request, Model model){
+		
+		model.addAttribute("msg", "李保清");
+		return "/task/task";
+	}
+	
 	@RequestMapping("/project")
 	public String project(HttpServletRequest request, Model model){
 		
 		model.addAttribute("msg", "李保清");
-		return "/task/task";
+		return "/task/project";
 	}
 	
 	@RequestMapping("/test")

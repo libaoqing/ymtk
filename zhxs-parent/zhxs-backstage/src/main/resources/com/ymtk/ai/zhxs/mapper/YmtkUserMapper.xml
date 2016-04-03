@@ -19,11 +19,12 @@
     id, username, login_name, password, password_salt, sex, phone, email, birthday, status, 
     del, create_time
   </sql>
-  <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="queryUsers" resultMap="BaseResultMap" parameterType="com.ymtk.ai.zhxs.query.BaseUserQuery" >
     select 
     <include refid="Base_Column_List" />
     from ymtk_user
-    where id = #{id,jdbcType=INTEGER}
+    where 1=1
+
   </select>
   
   <select id="select" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -44,19 +45,8 @@
     delete from ymtk_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
-    insert into ymtk_user (id, username, login_name, 
-      password, password_salt, sex, 
-      phone, email, birthday, 
-      status, del, create_time
-      )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{passwordSalt,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
-      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{birthday,jdbcType=BIGINT}, 
-      #{status,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}, #{createTime,jdbcType=BIGINT}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
+  
+  <insert id="add" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
     insert into ymtk_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -135,7 +125,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
+  <update id="update" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
     update ymtk_user
     <set >
       <if test="username != null" >
@@ -172,21 +162,6 @@
         create_time = #{createTime,jdbcType=BIGINT},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.ymtk.ai.zhxs.entity.YmtkUser" >
-    update ymtk_user
-    set username = #{username,jdbcType=VARCHAR},
-      login_name = #{loginName,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      password_salt = #{passwordSalt,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=INTEGER},
-      phone = #{phone,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      birthday = #{birthday,jdbcType=BIGINT},
-      status = #{status,jdbcType=INTEGER},
-      del = #{del,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

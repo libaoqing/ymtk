@@ -16,6 +16,9 @@
 	<mapping path="/task/*">
 		<decorator>/common/index</decorator>
 	</mapping>
+	<mapping path="/manager/*">
+		<decorator>/common/index</decorator>
+	</mapping>
 	<!-- 
   <mapping path="/*.special.jsp" decorator="/special-decorator.html"/>
  -->

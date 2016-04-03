@@ -34,13 +34,14 @@ public class UserController extends BaseController{
 	        subject.login(token);
 	        if (subject.isAuthenticated()) {
 	        	
-	            return "redirect:/task/project";  
-	        } else {	        	
+	            return "redirect:/task/task";  
+	        } else {
+	        	model.addAttribute("message", "未登录，请重新登陆");
 	            return "login/login";  
 	        }  
 	    } catch (IncorrectCredentialsException e) {  
 	        msg = "登录密码错误. Password for account " + token.getPrincipal() + " was incorrect.";  
-	        model.addAttribute("message", msg);  
+	        model.addAttribute("message", msg);
 	        System.out.println(msg);  
 	    } catch (ExcessiveAttemptsException e) {  
 	        msg = "登录失败次数过多";  

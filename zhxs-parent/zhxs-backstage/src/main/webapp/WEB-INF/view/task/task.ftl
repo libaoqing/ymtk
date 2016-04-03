@@ -145,38 +145,20 @@
 
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 
-						<h3 class="page-title">
-
-							Dashboard <small>statistics and more${msg}顺丰到付</small>
-
-						</h3>
+						<h3 class="page-title">任务管理</h3>
 
 						<ul class="breadcrumb">
-
 							<li>
-
-								<i class="icon-home"></i>
-
-								<a href="index.html">Home</a> 
-
-								<i class="icon-angle-right"></i>
-
+								<i class="icon-home"></i><a href="index.html">Home</a><i class="icon-angle-right"></i>
 							</li>
 
-							<li><a href="#">Dashboard</a></li>
-
+							<li><a href="#">任务管理</a></li>
 							<li class="pull-right no-text-shadow">
-
 								<div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
-
 									<i class="icon-calendar"></i>
-
 									<span></span>
-
 									<i class="icon-angle-down"></i>
-
 								</div>
-
 							</li>
 
 						</ul>
@@ -190,135 +172,7 @@
 				<!-- END PAGE HEADER-->
 
 				<div id="dashboard">
-
-					<!-- BEGIN DASHBOARD STATS -->
-
-					<div class="row-fluid">
-
-						<div class="span3 responsive" data-tablet="span6" data-desktop="span3">
-
-							<div class="dashboard-stat blue">
-
-								<div class="visual">
-
-									<i class="icon-comments"></i>
-
-								</div>
-
-								<div class="details">
-
-									<div class="number">
-
-										1349
-
-									</div>
-
-									<div class="desc">                           
-
-										New Feedbacks
-
-									</div>
-
-								</div>
-
-								<a class="more" href="#">
-
-								View more <i class="m-icon-swapright m-icon-white"></i>
-
-								</a>                 
-
-							</div>
-
-						</div>
-
-						<div class="span3 responsive" data-tablet="span6" data-desktop="span3">
-
-							<div class="dashboard-stat green">
-
-								<div class="visual">
-
-									<i class="icon-shopping-cart"></i>
-
-								</div>
-
-								<div class="details">
-
-									<div class="number">549</div>
-
-									<div class="desc">New Orders</div>
-
-								</div>
-
-								<a class="more" href="#">
-
-								View more <i class="m-icon-swapright m-icon-white"></i>
-
-								</a>                 
-
-							</div>
-
-						</div>
-
-						<div class="span3 responsive" data-tablet="span6  fix-offset" data-desktop="span3">
-
-							<div class="dashboard-stat purple">
-
-								<div class="visual">
-
-									<i class="icon-globe"></i>
-
-								</div>
-
-								<div class="details">
-
-									<div class="number">+89%</div>
-
-									<div class="desc">Brand Popularity</div>
-
-								</div>
-
-								<a class="more" href="#">
-
-								View more <i class="m-icon-swapright m-icon-white"></i>
-
-								</a>                 
-
-							</div>
-
-						</div>
-
-						<div class="span3 responsive" data-tablet="span6" data-desktop="span3">
-
-							<div class="dashboard-stat yellow">
-
-								<div class="visual">
-
-									<i class="icon-bar-chart"></i>
-
-								</div>
-
-								<div class="details">
-
-									<div class="number">12,5M$</div>
-
-									<div class="desc">Total Profit</div>
-
-								</div>
-
-								<a class="more" href="#">
-
-								View more <i class="m-icon-swapright m-icon-white"></i>
-
-								</a>                 
-
-							</div>
-
-						</div>
-
-					</div>
-
-					<!-- END DASHBOARD STATS -->
-
+				
 					<div class="clearfix"></div>
 
 					<div class="row-fluid">

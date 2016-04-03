@@ -243,32 +243,6 @@
 
 								<a href="inbox.html?a=view">
 
-								<span class="photo"><img src="./${request.contextPath}/media/image/avatar3.jpg" alt="" /></span>
-
-								<span class="subject">
-
-								<span class="from">Richard Doe</span>
-
-								<span class="time">16 mins</span>
-
-								</span>
-
-								<span class="message">
-
-								Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh
-
-								auctor nibh...
-
-								</span>  
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="inbox.html?a=view">
-
 								<span class="photo"><img src="${request.contextPath}/media/image/avatar1.jpg" alt="" /></span>
 
 								<span class="subject">
@@ -316,119 +290,66 @@
 						</a>
 
 						<ul class="dropdown-menu extended tasks">
-
+							<li><p>You have 12 pending tasks</p></li>
 							<li>
 
-								<p>You have 12 pending tasks</p>
-
-							</li>
-
-							<li>
-
-								<a href="#">
-
-								<span class="task">
-
-								<span class="desc">New release v1.2</span>
-
-								<span class="percent">30%</span>
-
-								</span>
+								<a href="#"><span class="task"><span class="desc">New release v1.2</span><span class="percent">30%</span></span>
 
 								<span class="progress progress-success ">
-
 								<span style="width: 30%;" class="bar"></span>
-
 								</span>
-
 								</a>
-
 							</li>
 
 							<li>
 
 								<a href="#">
-
 								<span class="task">
-
 								<span class="desc">Application deployment</span>
-
 								<span class="percent">65%</span>
-
 								</span>
-
 								<span class="progress progress-danger progress-striped active">
-
 								<span style="width: 65%;" class="bar"></span>
-
 								</span>
-
 								</a>
-
 							</li>
 
 							<li>
 
 								<a href="#">
-
 								<span class="task">
-
 								<span class="desc">Mobile app release</span>
-
 								<span class="percent">98%</span>
-
 								</span>
-
 								<span class="progress progress-success">
-
 								<span style="width: 98%;" class="bar"></span>
-
 								</span>
-
 								</a>
-
 							</li>
 
 							<li>
 
 								<a href="#">
-
 								<span class="task">
-
 								<span class="desc">Database migration</span>
-
 								<span class="percent">10%</span>
-
 								</span>
-
 								<span class="progress progress-warning progress-striped">
-
 								<span style="width: 10%;" class="bar"></span>
-
 								</span>
-
 								</a>
-
 							</li>
 
 							<li>
 
 								<a href="#">
-
 								<span class="task">
-
 								<span class="desc">Web server upgrade</span>
-
 								<span class="percent">58%</span>
-
 								</span>
-
 								<span class="progress progress-info">
-
 								<span style="width: 58%;" class="bar"></span>
-
 								</span>
-
 								</a>
 
 							</li>
@@ -475,7 +396,7 @@
 
 						<img alt="" src="${request.contextPath}/media/image/avatar1_small.jpg" />
 
-						<span class="username">Bob Nilson</span>
+						<span class="username">${username!'admin'}</span>
 
 						<i class="icon-angle-down"></i>
 
@@ -768,75 +689,32 @@
 				</li>
 
 				<li class="">
-
 					<a href="javascript:;">
-
-					<i class="icon-table"></i> 
-
-					<span class="title">Form Stuff</span>
-
-					<span class="arrow "></span>
-
+						<i class="icon-table"></i>
+						<span class="title">用户管理</span>
+						<span class="arrow "></span>
 					</a>
 
 					<ul class="sub-menu">
-
 						<li >
-
-							<a href="form_layout.html">
-
-							Form Layouts</a>
-
+							<a href="${request.contextPath}/manager/user/list">用户管理</a>
 						</li>
 
 						<li >
-
-							<a href="form_samples.html">
-
-							Advance Form Samples</a>
-
+							<a href="form_samples.html">部门管理</a>
 						</li>
 
 						<li >
-
-							<a href="form_component.html">
-
-							Form Components</a>
-
+							<a href="form_component.html">权限管理</a>
 						</li>
 
 						<li >
-
-							<a href="form_wizard.html">
-
-							Form Wizard</a>
-
+							<a href="${request.contextPath}/manager/role/list">角色管理</a>
 						</li>
 
 						<li >
-
-							<a href="form_validation.html">
-
-							Form Validation</a>
-
+							<a href="form_validation.html">Form Validation</a>
 						</li>
-
-						<li >
-
-							<a href="form_fileupload.html">
-
-							Multiple File Upload</a>
-
-						</li>
-
-						<li >
-
-							<a href="form_dropzone.html">
-
-							Dropzone File Upload</a>
-
-						</li>
-
 					</ul>
 
 				</li>
@@ -847,72 +725,35 @@
 
 					<i class="icon-briefcase"></i> 
 
-					<span class="title">Pages</span>
+					<span class="title">日程管理</span>
 
 					<span class="arrow "></span>
 
 					</a>
 
 					<ul class="sub-menu">
-
 						<li >
-
-							<a href="page_timeline.html">
-
-							<i class="icon-time"></i>
-
-							Timeline</a>
-
+							<a href="${request.contextPath}/task/project"><i class="icon-time"></i>项目</a>
 						</li>
 
 						<li >
-
-							<a href="page_coming_soon.html">
-
-							<i class="icon-cogs"></i>
-
-							Coming Soon</a>
-
+							<a href="${request.contextPath}/task/task"><i class="icon-cogs"></i>任务管理</a>
 						</li>
 
 						<li >
-
-							<a href="page_blog.html">
-
-							<i class="icon-comments"></i>
-
-							Blog</a>
-
+							<a href="${request.contextPath}/task/task"><i class="icon-comments"></i>页签管理</a>
 						</li>
 
 						<li >
-
-							<a href="page_blog_item.html">
-
-							<i class="icon-font"></i>
-
-							Blog Post</a>
-
+							<a href="${request.contextPath}/task/test"><i class="icon-font"></i>标签</a>
 						</li>
 
 						<li >
-
-							<a href="page_news.html">
-
-							<i class="icon-coffee"></i>
-
-							News</a>
-
+							<a href="page_news.html"><i class="icon-coffee"></i>News</a>
 						</li>
 
 						<li >
-
-							<a href="page_news_item.html">
-
-							<i class="icon-bell"></i>
-
-							News View</a>
-
+							<a href="page_news_item.html"><i class="icon-bell"></i>News View</a>
 						</li>
 
 						<li >
@@ -950,135 +791,54 @@
 				</li>
 
 				<li class="">
-
 					<a href="javascript:;">
-
-					<i class="icon-gift"></i> 
-
-					<span class="title">Extra</span>
-
-					<span class="arrow "></span>
-
+						<i class="icon-gift"></i>
+						<span class="title">创意管理</span>
+						<span class="arrow "></span>
 					</a>
 
 					<ul class="sub-menu">
-
 						<li >
-
 							<a href="extra_profile.html">
-
 							User Profile</a>
-
+						</li>
+						<li >
+							<a href="extra_lock.html">Lock Screen</a>
 						</li>
 
 						<li >
-
-							<a href="extra_lock.html">
-
-							Lock Screen</a>
-
+							<a href="extra_faq.html">FAQ</a>
 						</li>
 
 						<li >
-
-							<a href="extra_faq.html">
-
-							FAQ</a>
-
+							<a href="inbox.html">Inbox</a>
 						</li>
 
 						<li >
-
-							<a href="inbox.html">
-
-							Inbox</a>
-
+							<a href="extra_search.html">Search Results</a>
 						</li>
-
+						
 						<li >
-
-							<a href="extra_search.html">
-
-							Search Results</a>
-
-						</li>
-
-						<li >
-
 							<a href="extra_invoice.html">
-
 							Invoice</a>
-
 						</li>
 
 						<li >
-
 							<a href="extra_pricing_table.html">
-
 							Pricing Tables</a>
-
 						</li>
 
 						<li >
-
-							<a href="extra_image_manager.html">
-
-							Image Manager</a>
-
+							<a href="extra_image_manager.html">Image Manager</a>
 						</li>
-
-						<li >
-
-							<a href="extra_404_option1.html">
-
-							404 Page Option 1</a>
-
-						</li>
-
-						<li >
-
-							<a href="extra_404_option2.html">
-
-							404 Page Option 2</a>
-
-						</li>
-
-						<li >
-
-							<a href="extra_404_option3.html">
-
-							404 Page Option 3</a>
-
-						</li>
-
-						<li >
-
-							<a href="extra_500_option1.html">
-
-							500 Page Option 1</a>
-
-						</li>
-
-						<li >
-
-							<a href="extra_500_option2.html">
-
-							500 Page Option 2</a>
-
-						</li>
-
 					</ul>
-
 				</li>
 
 				<li>
 
 					<a class="active" href="javascript:;">
-
-					<i class="icon-sitemap"></i> 
-
+					<i class="icon-sitemap"></i>
 					<span class="title">3 Level Menu</span>
-
 					<span class="arrow "></span>
 
 					</a>
@@ -1249,40 +1009,6 @@
 
 					<a href="javascript:;">
 
-					<i class="icon-user"></i> 
-
-					<span class="title">Login Options</span>
-
-					<span class="arrow "></span>
-
-					</a>
-
-					<ul class="sub-menu">
-
-						<li >
-
-							<a href="login.html">
-
-							Login Form 1</a>
-
-						</li>
-
-						<li >
-
-							<a href="login_soft.html">
-
-							Login Form 2</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="javascript:;">
-
 					<i class="icon-th"></i> 
 
 					<span class="title">Data Tables</span>
@@ -1371,40 +1097,6 @@
 
 				</li>
 
-				<li class="">
-
-					<a href="javascript:;">
-
-					<i class="icon-map-marker"></i> 
-
-					<span class="title">Maps</span>
-
-					<span class="arrow "></span>
-
-					</a>
-
-					<ul class="sub-menu">
-
-						<li >
-
-							<a href="maps_google.html">
-
-							Google Maps</a>
-
-						</li>
-
-						<li >
-
-							<a href="maps_vector.html">
-
-							Vector Maps</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
 				<li class="last ">
 
 					<a href="charts.html">
@@ -1426,8 +1118,6 @@
 		<!-- END SIDEBAR -->
     <sitemesh:write property='body' />
     <hr />
-    	<!-- BEGIN FOOTER -->
-
 	<div class="footer">
 
 		<div class="footer-inner">
