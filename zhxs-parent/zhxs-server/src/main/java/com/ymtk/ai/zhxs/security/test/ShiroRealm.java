@@ -33,7 +33,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		
 		logger.debug("验证权限！");
 		YmtkUser user = (YmtkUser) principals.fromRealm(getName()).iterator().next();
-		System.out.println(user.getLoginName());
+		System.out.println(user.getUserName());
 		
 		List<YmtkPermission> cper = permgr.getPermission(user);
 		SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
@@ -64,7 +64,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		if(user==null){
 			throw new UnknownAccountException();
 		}else{
-			logger.debug("登陆用户："+user.getLoginName());
+			logger.debug("登陆用户："+user.getUserName());
 			return new SimpleAuthenticationInfo(user,user.getPassword(),getName());
 		}
 	}

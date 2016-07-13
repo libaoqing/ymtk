@@ -1,8 +1,6 @@
 package com.ymtk.ai.zhxs.entity;
 
-import java.io.Serializable;
-
-public class YmtkPermission implements Serializable{
+public class YmtkPermission {
     private Integer id;
 
     private String permission;

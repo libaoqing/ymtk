@@ -1,8 +1,6 @@
 package com.ymtk.ai.zhxs.entity;
 
-import java.io.Serializable;
-
-public class YmtkRole implements Serializable{
+public class YmtkRole {
     private Integer id;
 
     private String name;

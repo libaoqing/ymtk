@@ -1,31 +1,41 @@
 package com.ymtk.ai.zhxs.entity;
 
-import java.io.Serializable;
+import java.util.Date;
 
-public class YmtkUser implements Serializable{
+public class YmtkUser {
     private Integer id;
 
-    private String username;
+    private Integer parentId;
 
     private String loginName;
+
+    private String userName;
 
     private String password;
 
     private String passwordSalt;
 
-    private Integer sex;
-
     private String phone;
 
-    private String email;
+    private String sex;
 
-    private Long birthday;
+    private String birthday;
 
-    private Integer status;
+    private String remark;
 
-    private Integer del;
+    private Date updateTime;
 
-    private Long createTime;
+    private Date createTime;
+
+    private String status;
+
+    private String del;
+
+    private String addr;
+
+    private String province;
+
+    private String userType;
 
     public Integer getId() {
         return id;
@@ -35,12 +45,12 @@ public class YmtkUser implements Serializable{
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public String getLoginName() {
@@ -49,6 +59,14 @@ public class YmtkUser implements Serializable{
 
     public void setLoginName(String loginName) {
         this.loginName = loginName == null ? null : loginName.trim();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getPassword() {
@@ -67,14 +85,6 @@ public class YmtkUser implements Serializable{
         this.passwordSalt = passwordSalt == null ? null : passwordSalt.trim();
     }
 
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -83,43 +93,83 @@ public class YmtkUser implements Serializable{
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getEmail() {
-        return email;
+    public String getSex() {
+        return sex;
     }
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
-    public Long getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Long birthday) {
-        this.birthday = birthday;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday == null ? null : birthday.trim();
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Integer getDel() {
-        return del;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setDel(Integer del) {
-        this.del = del;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Long getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
+    }
+
+    public String getDel() {
+        return del;
+    }
+
+    public void setDel(String del) {
+        this.del = del == null ? null : del.trim();
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr == null ? null : addr.trim();
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType == null ? null : userType.trim();
     }
 }
