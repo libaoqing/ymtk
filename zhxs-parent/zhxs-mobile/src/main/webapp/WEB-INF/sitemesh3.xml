@@ -12,14 +12,14 @@
 		<decorator>/common/task</decorator>
 	</mapping>
 	-->
-  <!-- 对不同的路径，启用不同的装饰器 
+  <!-- 对不同的路径，启用不同的装饰器 -->
 	<mapping path="/task/*">
 		<decorator>/common/index</decorator>
 	</mapping>
-	-->
+	<!-- 
 	<mapping path="/manager/*">
 		<decorator>/common/index</decorator>
-	</mapping>
+	</mapping> -->
 	<!-- 
   <mapping path="/*.special.jsp" decorator="/special-decorator.html"/>
  -->

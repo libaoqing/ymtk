@@ -5,7 +5,9 @@ import java.util.List;
 import com.ymtk.ai.zhxs.entity.YmtkRole;
 
 public interface YmtkRoleMapper extends SqlMapper{
-    int deleteByPrimaryKey(Integer id);
+    
+	
+	int deleteByPrimaryKey(Integer id);
 
     int insert(YmtkRole record);
 

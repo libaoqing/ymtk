@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ymtk.ai.zhxs.mapper.YmtkTaskMapper" >
+  <resultMap id="BaseResultMap" type="com.ymtk.ai.zhxs.entity.YmtkTask" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="is_publish" property="isPublish" jdbcType="VARCHAR" />
+    <result column="precent" property="precent" jdbcType="VARCHAR" />
+    <result column="secrecy" property="secrecy" jdbcType="VARCHAR" />
+    <result column="supervise" property="supervise" jdbcType="VARCHAR" />
+    <result column="pro_id" property="proId" jdbcType="INTEGER" />
+    <result column="priority" property="priority" jdbcType="VARCHAR" />
+    <result column="remind" property="remind" jdbcType="VARCHAR" />
+    <result column="addr" property="addr" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="del" property="del" jdbcType="INTEGER" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, name, is_publish, precent, secrecy, supervise, pro_id, priority, remind, 
+    addr, remark, del, start_time, end_time, createtime
+  </sql>
+  <select id="get" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ymtk_task
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="list" resultMap="BaseResultMap" parameterType="com.ymtk.ai.zhxs.query.TaskQuery" >
+    select 
+    <include refid="Base_Column_List" />
+    from ymtk_task
+    where 1=1
+  </select>
+  <delete id="delete" parameterType="java.lang.Integer" >
+    delete from ymtk_task
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertSelective" parameterType="com.ymtk.ai.zhxs.entity.YmtkTask" >
+    insert into ymtk_task
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="isPublish != null" >
+        is_publish,
+      </if>
+      <if test="precent != null" >
+        precent,
+      </if>
+      <if test="secrecy != null" >
+        secrecy,
+      </if>
+      <if test="supervise != null" >
+        supervise,
+      </if>
+      <if test="proId != null" >
+        pro_id,
+      </if>
+      <if test="priority != null" >
+        priority,
+      </if>
+      <if test="remind != null" >
+        remind,
+      </if>
+      <if test="addr != null" >
+        addr,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="del != null" >
+        del,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublish != null" >
+        #{isPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="precent != null" >
+        #{precent,jdbcType=VARCHAR},
+      </if>
+      <if test="secrecy != null" >
+        #{secrecy,jdbcType=VARCHAR},
+      </if>
+      <if test="supervise != null" >
+        #{supervise,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null" >
+        #{proId,jdbcType=INTEGER},
+      </if>
+      <if test="priority != null" >
+        #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="remind != null" >
+        #{remind,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        #{del,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ymtk.ai.zhxs.entity.YmtkTask" >
+    update ymtk_task
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublish != null" >
+        is_publish = #{isPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="precent != null" >
+        precent = #{precent,jdbcType=VARCHAR},
+      </if>
+      <if test="secrecy != null" >
+        secrecy = #{secrecy,jdbcType=VARCHAR},
+      </if>
+      <if test="supervise != null" >
+        supervise = #{supervise,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null" >
+        pro_id = #{proId,jdbcType=INTEGER},
+      </if>
+      <if test="priority != null" >
+        priority = #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="remind != null" >
+        remind = #{remind,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        addr = #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        del = #{del,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

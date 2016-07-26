@@ -20,6 +20,16 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>com.ymtk.ai</groupId>
+    	<artifactId>zhxs-server</artifactId>
+    	<version>1.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.ymtk.ai</groupId>
+    	<artifactId>zhxs-utils</artifactId>
+    	<version>1.0</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>zhxs-api</finalName>

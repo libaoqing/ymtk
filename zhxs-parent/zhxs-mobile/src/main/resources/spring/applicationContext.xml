@@ -44,9 +44,9 @@
 	<!-- 
 	<import resource="application-shiro.xml" />
 	 -->
-	<import resource="application-freemarker.xml"/>
 	<import resource="application-mvc.xml" />
 	<import resource="application-servlet.xml" />
+	<import resource="application-freemarker.xml"/>
 </beans>
 
 
