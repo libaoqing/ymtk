@@ -48,7 +48,7 @@ public class ShiroFilter implements Filter {
     HttpServletRequest httpRequest = (HttpServletRequest) request;
     HttpServletResponse httpResponse = (HttpServletResponse) response;
     Principal principal = httpRequest.getUserPrincipal();
-    System.out.println("ee");
+
     if (principal != null) {
       Subject subjects = SecurityUtils.getSubject();
       // 为了简单，这里初始化一个用户。实际项目项目中应该去数据库里通过名字取用户：

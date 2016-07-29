@@ -6,9 +6,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+    <module>zhxs-backstage</module>
     <module>zhxs-mobile</module>
     <module>zhxs-api</module>
-    <module>zhxs-backstage</module>
     <module>zhxs-server</module>
     <module>zhxs-web</module>
     <module>zhxs-utils</module>
