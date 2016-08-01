@@ -157,7 +157,7 @@
 						<#list result as item>
 							<tr>
 	
-								<td>${item.username}</td>
+								<td>${item.userName}</td>
 	
 								<td>
 								<#if item.phone??>
